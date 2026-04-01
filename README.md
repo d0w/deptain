@@ -4,7 +4,7 @@ Detain and analyze project npm, pypi, and more dependencies in a fast and safe m
 Supply chain attacks have always been an issue but particularly in 2026, the effects and number of occurrences have been aggregious. Deptain seeks to prevent the millions of users, servers, and production environments that will inevitably download third-party dependencies from package managers such as NPM, PyPi, and more from being infected by polluted software supply chains. 
 
 ## POC
-Such a tool seeks to wrap existing package manager CLI tools such as NPM. A containerized or sandboxed instance is spun up and installs a project's dependencies (e.g. from `package-lock.json`) in that environment separately from the host machine. The tool will:
+Such a tool seeks to wrap existing package manager CLI tools such as NPM. A containerized (Docker) or sandboxed (landlock) process is spun up and installs a project's dependencies (e.g. from `package-lock.json`) in that environment separately from the host machine. The tool will:
 - Analyze any source code if possible
 - Read and monitor any pre/post installation scripts
 - Monitor network traffic for any suspicious network requests
